@@ -75,10 +75,7 @@ public class Fibonacci {
             executor.execute(new TestFibonachi(generated, fibonacci));
         }
 
-        // This will make the executor accept no new threads
-        // and finish all existing threads in the queue
         executor.shutdown();
-        // Wait until all threads are finish
         try {
             executor.awaitTermination(20, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
